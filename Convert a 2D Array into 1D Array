@@ -1,41 +1,37 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
- 
-namespace Program
+
+namespace ConsoleApp090421
 {
-    class twodmatrix
+    class TwoDMatrix
     {
         int m, n;
         int[,] a;
         int[] b;
-        twodmatrix(int x, int y)
+        TwoDMatrix(int x, int y)
         {
             m = x;
             n = y;
             a = new int[m, n];
             b = new int[m * n];
         }
-        public void readmatrix()
+        public void ReadMatrix()
         {
-            for (int i = 0; i < m; i++)
+            for(int i = 0; i < m; i++)
             {
-                for (int j = 0; j < n; j++)
+                for(int j = 0; j < n; j++)
                 {
                     Console.WriteLine("a[{0},{1}]=", i, j);
                     a[i, j] = Convert.ToInt32(Console.ReadLine());
                 }
             }
         }
-        public void printd()
+        public void printD()
         {
-            for (int i = 0; i < m; i++)
+            for(int i = 0; i < m; i++)
             {
-                for (int j = 0; j < n; j++)
+                for(int j = 0; j < n; j++)
                 {
                     Console.Write("{0}\t", a[i, j]);
- 
                 }
                 Console.Write("\n");
             }
@@ -43,33 +39,31 @@ namespace Program
         public void convert()
         {
             int k = 0;
-            for (int i = 0; i < m; i++)
+            for(int i = 0; i < m; i++)
             {
-                for (int j = 0; j < n; j++)
+                for(int j = 0; j < n; j++)
                 {
                     b[k++] = a[i, j];
                 }
             }
         }
-        public void printoned()
+        public void PrintOneD()
         {
-            for (int i = 0; i < m * n; i++)
+            for(int i = 0; i < m * n; i++)
             {
                 Console.WriteLine("{0}\t", b[i]);
             }
         }
- 
- 
         public static void Main(string[] args)
         {
-            twodmatrix obj = new twodmatrix(2,3);
+            TwoDMatrix obj = new TwoDMatrix(2, 3);
             Console.WriteLine("Enter the Elements : ");
-            obj.readmatrix();
-            Console.WriteLine("\t\t Given 2-D Array(Matrix) is : ");
-            obj.printd();
+            obj.ReadMatrix();
+            Console.WriteLine("\t\t Given 2-D Array(Matric) is : ");
+            obj.printD();
             obj.convert();
             Console.WriteLine("\t\t Converted 1-D Array is : ");
-            obj.printoned();
+            obj.PrintOneD();
             Console.ReadLine();
         }
     }
