@@ -1,0 +1,20 @@
+using System;
+
+namespace ConsoleApp140421
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Stray(new int[] { 1, 1, 2 }));
+            Console.WriteLine(Stray(new int[] { 2, 1, 1 }));
+            Console.WriteLine(Stray(new int[] { 1, 2, 1 }));
+            Console.WriteLine(Stray(new int[] { 1, 2, 1, 1, 1, 1, 1 }));
+        }
+        public static int Stray(int[] numbers)
+        {
+          Array.Sort(numbers);
+          return numbers[0] == numbers[1] ? numbers.Last() : numbers.First();
+        }
+    }
+}
