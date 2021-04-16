@@ -1,0 +1,18 @@
+using System;
+
+namespace ConsoleApp160421
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Gcd(30, 12));
+            Console.WriteLine(Gcd(8, 9));
+            Console.WriteLine(Gcd(1, 1));
+        }
+        public static int Gcd(int a, int b)
+        {
+            return a % b == 0 ? b : Gcd(b, a % b);
+        }
+    }
+}
