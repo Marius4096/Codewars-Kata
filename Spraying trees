@@ -1,0 +1,23 @@
+using System;
+
+namespace ConsoleApp230421
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Task("Wednesday", 10, 2));
+            Console.WriteLine(Task("Monday", 4, 3));
+            Console.WriteLine(Task("Friday", 5, 4));
+            Console.WriteLine(Task("Tuesday", 6, 1));
+            Console.WriteLine(Task("Thursday", 5, 3));
+        }
+        public static string Task(string w, int n, int c)
+        {
+            Dictionary<string, string> workers = new Dictionary<string, string>() {
+              {"Monday", "James"},{"Tuesday", "John"},{"Wednesday", "Robert"},
+              {"Thursday", "Michael"},{"Friday", "William"} };
+            return $"It is {w} today, {workers[w]}, you have to work, you must spray {n} trees and you need {n * c} dollars to buy liquid";
+        }
+    }
+}
