@@ -1,0 +1,18 @@
+using System;
+using System.Linq;
+
+namespace ConsoleApp260421
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Average(new int[] { 49,3,5,300,7 }));
+            Console.WriteLine(Average(new int[] { 90,98,89,100,100,86,94 }));
+        }
+        public static int Average(int[] scores)
+        {
+          return Convert.ToInt32(scores.Average());
+        }
+    }
+}
