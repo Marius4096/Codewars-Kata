@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp280421
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(string.Join(",", VowelIndices("mmm")));
+            Console.WriteLine(string.Join(",", VowelIndices("apple")));
+            Console.WriteLine(string.Join(",", VowelIndices("super")));
+            Console.WriteLine(string.Join(",", VowelIndices("orange")));
+            Console.WriteLine(string.Join(",", VowelIndices("supercalifragilisticexpialidocious")));
+            Console.WriteLine(string.Join(",", VowelIndices("AfmvueEmb")));
+        }
+        public static int[] VowelIndices(string word)
+        {
+            word = word.ToLower();
+            string s = "aeiouy";
+            List<int> list = new List<int>();
+            for (int i = 0; i < word.Length; i++)
+            {
+                if (s.Contains(word[i])) { list.Add(i + 1); }
+            }
+            return list.ToArray();
+        }
+    }
+}
+/*
+public static int[] VowelIndices(string word)
+  {
+    return Regex.Matches(word, "(?i)[aeiouy]").Select(m => m.Index + 1).ToArray();
+  }
+*/
