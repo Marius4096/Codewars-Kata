@@ -1,0 +1,24 @@
+using System;
+
+namespace ConsoleApp040521
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(ReverseBits(417));
+            Console.WriteLine(ReverseBits(267));
+            Console.WriteLine(ReverseBits(0));
+            Console.WriteLine(ReverseBits(2017));
+            Console.WriteLine(ReverseBits(1023));
+            Console.WriteLine(ReverseBits(1024));
+            Console.WriteLine(ReverseBits(long.MaxValue));
+        }
+        public static long ReverseBits(long n)
+        {
+            char[] binary = Convert.ToString(n, 2).ToCharArray();
+            Array.Reverse(binary);
+            return Convert.ToInt64(new string(binary), 2);
+        }
+    }
+}
