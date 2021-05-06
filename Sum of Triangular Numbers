@@ -1,0 +1,28 @@
+using System;
+
+namespace ConsoleApp060521
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(SumTriangularNumbers(6));
+            Console.WriteLine(SumTriangularNumbers(34));
+            Console.WriteLine(SumTriangularNumbers(-291));
+            Console.WriteLine(SumTriangularNumbers(943));
+            Console.WriteLine(SumTriangularNumbers(-971));
+        }
+        public static int SumTriangularNumbers(int n)
+        {
+            int trin = 0;
+            for(int i = 1; i <= n; i++)
+            {
+                for(int j = 1; j <= i; j++)
+                {
+                    trin += j;
+                }
+            }
+            return trin;
+        }
+    }
+}
