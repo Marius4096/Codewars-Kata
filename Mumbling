@@ -1,0 +1,42 @@
+using System;
+
+namespace ConsoleApp170521Mumbling
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Accum("ZpglnRxqenU"));
+            Console.WriteLine(Accum("NyffsGeyylB"));
+            Console.WriteLine(Accum("MjtkuBovqrU"));
+            Console.WriteLine(Accum("EvidjUnokmM"));
+            Console.WriteLine(Accum("HbideVbxncC"));
+        }
+        public static String Accum(string s)
+        {
+            string result = "";
+            char[] stringArray;
+            stringArray = s.ToCharArray();
+            for(int i = 0; i < stringArray.Length; i++)
+            {
+                char.ToLower(stringArray[i]);
+                for(int j = 0; j <= i; j++)
+                {
+                    if (j == 0)
+                    {
+                        result += char.ToUpper(stringArray[i]);
+                    }
+                    else
+                    {
+                        result += char.ToLower(stringArray[i]);
+                    }
+                }
+                if(i != stringArray.Length - 1)
+                {
+                    result += '-';
+                }
+            }
+            return result;
+        }
+    }
+}
