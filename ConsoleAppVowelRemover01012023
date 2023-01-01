@@ -1,0 +1,25 @@
+using System;
+
+namespace ConsoleAppVowelRemover01012023
+{
+    class Program
+    {
+        public static void Main()
+        {
+            Console.WriteLine(Shortcut("hello"));
+            Console.WriteLine(Shortcut("how are you today?"));
+            Console.WriteLine(Shortcut("complain"));
+            Console.WriteLine(Shortcut("never"));
+        }
+        public static string Shortcut(string input)
+        {
+            string output = input.Replace("a", string.Empty)
+                              .Replace("a", string.Empty)
+                              .Replace("e", string.Empty)
+                              .Replace("i", string.Empty)
+                              .Replace("o", string.Empty)
+                              .Replace("u", string.Empty);
+            return output;
+        }
+    }
+}
